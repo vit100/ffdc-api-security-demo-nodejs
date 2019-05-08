@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  bankservice:
+    image: bankservice
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 100:100

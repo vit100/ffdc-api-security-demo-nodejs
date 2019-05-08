@@ -1,0 +1,31 @@
+{
+  "name": "bankservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=production nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "express-bearer-token": "^2.4.0",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^1.4.0",
+    "morgan": "^1.9.1",
+    "socket.io": "^2.2.0",
+    "swagger-ui-express": "^4.0.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.19.0"
+  }
+}
