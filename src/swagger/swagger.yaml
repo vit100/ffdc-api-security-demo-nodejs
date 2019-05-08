@@ -20,8 +20,8 @@ tags:
       url: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#define-readiness-probes
 basePath: '/'
 schemes:
-  - http
   - https
+  - http
 produces:
   - application/json
 consumes:
