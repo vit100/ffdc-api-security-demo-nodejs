@@ -23,15 +23,15 @@ expressApp.use(cors());
 expressApp.use(express.json());
 expressApp.use(expressBearerToken());
 
-expressApp.use('/_status', healthzReadyzRouter);
-expressApp.use('/api/', auth(), apiRouter, (req,res)=>{/* dead end. no more middlewares */});
-expressApp.use('/', swagger);
-
 expressApp.use((req, res, next) => {
   const socketIoEmmiter = socket('data');
   socketIoEmmiter(extractRequestData(req));
   next();
 });
+
+expressApp.use('/_status', healthzReadyzRouter);
+expressApp.use('/api/', auth(), apiRouter, (req,res)=>{/* dead end. no more middlewares */});
+expressApp.use('/', swagger);
 
 const httpServer = http.createServer(expressApp);
 const socket = socketIO(httpServer);

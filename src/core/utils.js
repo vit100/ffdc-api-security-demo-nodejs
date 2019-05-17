@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 
-
 extractRequestData =(req)=>{
   return {
+    dateTime: Date.now(),
     url: req.url,
     params: req.params,
     headers: req.headers,
