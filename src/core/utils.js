@@ -4,6 +4,7 @@ extractRequestData =(req)=>{
   return {
     dateTime: Date.now(),
     url: req.url,
+    method: req.method,
     params: req.params,
     headers: req.headers,
     body: req.body,

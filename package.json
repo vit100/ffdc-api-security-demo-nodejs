@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=production nodemon index.js",
+    "serve": "cross-env NODE_ENV=dev DEBUG=* nodemon index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
