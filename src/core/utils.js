@@ -9,7 +9,7 @@ extractRequestData =(req)=>{
     headers: req.headers,
     body: req.body,
     token: req.token,
-    parsedJWT: jwt.decode(req.token)
+    parsedJWT: jwt.decode(req.token, {complete:true})
   }
 }
 
