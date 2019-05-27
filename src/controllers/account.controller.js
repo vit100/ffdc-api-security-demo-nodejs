@@ -10,7 +10,7 @@ module.exports = class AccountController {
 
   static getAccountsById(req, res, next) {
     debug('accountController.getAccountsByConsumer invoked');
-    res.send(accountsRepo.consumerAccounts(req.params.id));
+    res.send(accountsRepo.consumerAccounts(req.params.consumerId));
     next();
   }
 };

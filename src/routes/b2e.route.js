@@ -4,6 +4,6 @@ const ConsumersController = require('../controllers/consumers.controller');
 
 router.get('/consumers', ConsumersController.getConsumers);
 
-router.get('/accounts/:id', AccountController.getAccountsById);
+router.get('/accounts/:consumerId', AccountController.getAccountsById);
 
 module.exports = router;

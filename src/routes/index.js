@@ -6,7 +6,7 @@ const b2eRouter = require('./b2e.route');
 
 router.use('/b2c', b2cRouter);
 router.use('/b2b', b2bRouter);
-router.use('/b2e', b2eRouter); //same as b2b??
+router.use('/b2e', b2eRouter);
 
 module.exports = router;
 
