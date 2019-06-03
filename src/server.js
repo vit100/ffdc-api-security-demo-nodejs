@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const expressBearerToken = require('express-bearer-token');
 const debug = require('debug')(__filename);
+const helmet = require('helmet');
 
 const auth = require('./auth');
 const swagger = require('./swagger');
@@ -18,6 +19,7 @@ const expressApp = express();
 expressApp.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
 expressApp.use(cors());
+expressApp.use(helmet());
 expressApp.use(express.json());
 expressApp.use(expressBearerToken());
 
