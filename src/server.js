@@ -24,12 +24,13 @@ expressApp.use(express.json());
 expressApp.use(expressBearerToken());
 
 expressApp.use((req, res, next) => {
-  if(req.headers['socketid']){
-  try {
-    socketIoEmmiter(req.headers['socketid'], extractRequestData(req));
-  } catch (error) {
-    debug('Error: Send to socket failed', error)    
-  }}
+  if (req.headers['socketid']) {
+    try {
+      socketIoEmmiter(req.headers['socketid'], extractRequestData(req));
+    } catch (error) {
+      debug('Error: Send to socket failed', error);
+    }
+  }
   next();
 });
 
@@ -38,6 +39,15 @@ expressApp.use('/api/', auth(), apiRouter, (req, res) => {
   /* dead end. no more middlewares */
 });
 expressApp.use('/', swagger);
+
+expressApp.use(function(err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401).send({
+      statusCode: 401,
+      error: 'Unauthorized'
+    });
+  }
+});
 
 const httpServer = http.createServer(expressApp);
 const socketIoEmmiter = socketIoController(httpServer)('data');
