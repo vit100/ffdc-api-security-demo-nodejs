@@ -4,29 +4,6 @@ const debug = require('debug')(__filename);
 clients = {};
 let socketioServer;
 
-// module.exports = httpServer => {
-//   debug('starting sockeIO');
-
-//   let socketIoServer = socketio(httpServer, {
-//     allowRequest: (req, cb) => {
-//       var x = req;
-//       cb(null, true);
-//     }
-//   });
-
-//   socketIoServer.on('connection', s => {
-//     debug(`incoming connection: ${s.id}`);
-//     clients[s.id] = s;
-//   });
-
-//   return (to, msg) => {
-//     let clientSocket = clients[to];
-//     if (clientSocket) {
-//       clientSocket.emit(event, msg);
-//     }
-//   };
-// };
-
 function createSocketServer(httpServer) {
   socketioServer = socketio(httpServer, {
     allowRequest: (req, cb) => {
