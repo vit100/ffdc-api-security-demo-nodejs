@@ -1,10 +1,10 @@
 {
   "name": "bankservice",
   "version": "1.0.0",
-  "description": "",
+  "description": "Finastra api security demo. Nodejs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vit100/dh-serviceProvider-api"
+    "url": "https://github.com/vit100/ffdc-api-security-demo-nodejs.git"
   },
   "main": "index.js",
   "scripts": {

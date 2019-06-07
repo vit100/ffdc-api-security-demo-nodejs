@@ -8,7 +8,7 @@ module.exports = class AccountController {
     next();
   }
 
-  static getAccountsById(req, res, next) {
+  static getConsumerAccounts(req, res, next) {
     debug('accountController.getAccountsByConsumer invoked');
     res.send(accountsRepo.consumerAccounts(req.params.consumerId));
     next();
